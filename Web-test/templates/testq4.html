@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Как ты реагируешь, если срочно нужно сделать сложную задачу?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Прикладная информатика" class="option-image-text">
+                    <span class="option-label-text">Составляю план на 10 листов, а потом ищу, куда делся кофе</span>
+                </button>
+                <button type="submit" name="answer" value="Информационные системы и технологии" class="option-image-text">
+                    <span class="option-label-text">Гуглю ‘решение задачи за 5 минут’, а через час смотрю мемы</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image-text">
+                    <span class="option-label-text">Тыкаю кнопки, пока не заработает или не сломается всё</span>
+                </button>
+                <button type="submit" name="answer" value="Бизнес-информатика" class="option-image-text">
+                    <span class="option-label-text">Спамлю в чат ‘кто шарит?’</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

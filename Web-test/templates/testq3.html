@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Как выглядит твоя кровать?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Информационная безопасность" class="option-image">
+                    <img src="{{ url_for('static', filename='images/bed-tidy.jpg') }}" >
+                    <span class="option-label">Аккуратно заправленная</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная математика и информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/bed-messy2.jpg') }}" >
+                    <span class="option-label">Ничего лишнего</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image">
+                    <img src="{{ url_for('static', filename='images/bed-anime.jpg') }}" >
+                    <span class="option-label">Иногда аниме смотрю, так что...</span>
+                </button>
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image">
+                    <img src="{{ url_for('static', filename='images/bed-empty.jpg') }}">
+                    <span class="option-label">Я не сплю</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

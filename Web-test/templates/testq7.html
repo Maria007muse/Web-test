@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Как ты ведёшь конспекты?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Информационные системы и технологии" class="option-image">
+                    <img src="{{ url_for('static', filename='images/notes-color.jpg') }}" alt="Цветные конспекты">
+                    <span class="option-label">Красиво оформленные</span>
+                </button>
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image">
+                    <img src="{{ url_for('static', filename='images/notes-text.jpg') }}" alt="Простой текст">
+                    <span class="option-label">Только самое важное</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image">
+                    <img src="{{ url_for('static', filename='images/notes-photo.jpg') }}" alt="Фото конспектов">
+                    <span class="option-label">Прошу у других</span>
+                </button>
+                <button type="submit" name="answer" value="Бизнес-информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/notes-none.jpg') }}" alt="Без конспектов">
+                    <span class="option-label">Какие конспекты...?</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

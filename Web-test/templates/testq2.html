@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Где тебе комфортнее всего работать?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image">
+                    <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="Дома">
+                    <span class="option-label">Дома за компьютером</span>
+                </button>
+                <button type="submit" name="answer" value="Бизнес-информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/cafe.jpg') }}" alt="Кафе">
+                    <span class="option-label">В кафе</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/office.jpg') }}" alt="Офис">
+                    <span class="option-label">В офисе</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image">
+                    <img src="{{ url_for('static', filename='images/beach.jpg') }}" alt="Пляж">
+                    <span class="option-label">На пляже</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

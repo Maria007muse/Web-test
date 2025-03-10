@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 8</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Как выглядит твой рабочий стол?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Информационная безопасность" class="option-image">
+                    <img src="{{ url_for('static', filename='images/desk-tidy.jpg') }}" alt="Идеальный порядок">
+                    <span class="option-label">Идеальная чистота</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image">
+                    <img src="{{ url_for('static', filename='images/desk-messy.jpg') }}" alt="Бардак">
+                    <span class="option-label">Все почти на своих местах</span>
+                </button>
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image">
+                    <img src="{{ url_for('static', filename='images/desk-coffee.jpg') }}" alt="Кофе и ноутбук">
+                    <span class="option-label">Место для кофе и ноутбука</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/desk-monitors.jpg') }}" alt="Три монитора">
+                    <span class="option-label">Один монитор? Нет, мне нужно хотя бы три!</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

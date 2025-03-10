@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Твой результат</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="result-background"></div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="notification-container">
+                {% for category, message in messages %}
+                    <div class="notification {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <div class="result-container">
+        <h1 class="result-title">{{ direction }}</h1>
+        <div class="result-box">
+            <p class="result-text">{{ description | safe }}</p>
+            <div class="email-prompt">
+                <span class="email-text">{{ email_prompt | safe }}</span>
+                <div class="button-group">
+                    {% if 'success' not in get_flashed_messages(with_categories=true) | map(attribute=0) %}
+                        <button class="email-button" id="show-email-form">Отправить на email</button>
+                        <form class="email-form" id="email-form" method="POST" style="display: none;">
+                            <input type="email" name="user_email" placeholder="Твой email" required>
+                            <button type="submit">Отправить</button>
+                        </form>
+                    {% endif %}
+                    <form method="POST" class="finish-form">
+                        <button type="submit" name="finish" class="finish-button">Завершить тест</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>

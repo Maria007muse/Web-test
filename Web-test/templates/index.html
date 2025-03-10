@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - КТИИБ РИНХ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="container">
+        <div class="left-laptop">
+            <div id="laptop-animation"></div>
+        </div>
+        <div class="content">
+            <h1>Добро пожаловать в «ПрофНавигатор»!</h1>
+            <p>Не знаешь, какое направление тебе подойдёт? Пройди наш интерактивный тест и узнай, какое направление в IT идеально соответствует твоим интересам и способностям!</p>
+            <button class="start-button" id="start-test">Начать тест</button>
+        </div>
+    </div>
+
+    <div class="modal" id="name-modal">
+        <div class="modal-content">
+            <h2>Давай познакомимся!</h2>
+            <form id="name-form" action="{{ url_for('start_test') }}" method="POST">
+                <p>Введи своё имя, чтобы начать тест:</p>
+                <div id="name-error" class="notification error" style="display: none;"></div>
+                <input type="text" id="user-name" name="user_name" placeholder="Твоё имя" required>
+                <button type="submit" id="submit-name">Продолжить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Какой кофе ты выберешь?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image">
+                    <img src="{{ url_for('static', filename='images/espresso.jpg') }}" alt="Эспрессо">
+                    <span class="option-label">Классический черный эспрессо</span>
+                </button>
+                <button type="submit" name="answer" value="Информационные системы и технологии" class="option-image">
+                    <img src="{{ url_for('static', filename='images/latte.jpg') }}" alt="Латте">
+                    <span class="option-label">Латте с красивым рисунком</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image">
+                    <img src="{{ url_for('static', filename='images/energy.jpg') }}" alt="Энергетик">
+                    <span class="option-label">Энергетик вместо кофе</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная математика и информатика" class="option-image">
+                    <img src="{{ url_for('static', filename='images/tea.jpg') }}" alt="Чай">
+                    <span class="option-label">Чай, зачем этот кофе?</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

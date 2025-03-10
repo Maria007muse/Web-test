@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 6</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Что в твоём плейлисте?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image-text">
+                    <span class="option-label-text">Lo-Fi, чтобы сосредоточиться и не уснуть в 3 часа ночи</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image-text">
+                    <span class="option-label-text">От металла до шансона — плейлист, как мой код, всё работает, но никто не знает как</span>
+                </button>
+                <button type="submit" name="answer" value="Бизнес-информатика" class="option-image-text">
+                    <span class="option-label-text">Подкасты про успех, пока чищу картошку</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная информатика" class="option-image-text">
+                    <span class="option-label-text">Громкие мотивашки, чтобы заглушить крики дедлайнов</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

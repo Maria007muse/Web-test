@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Твой результат теста ПрофНавигатор</title>
+</head>
+<body style="margin: 0; padding: 0; background: #0D1321; font-family: 'Arial', sans-serif; color: #FFFFFF;">
+    <div style="max-width: 600px; width: 100%; margin: 20px auto; background: #0D1321; border-radius: 20px; overflow: hidden; box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);">
+        <div style="background: linear-gradient(90deg, #FFD700 0%, #FFC107 100%); padding: 30px 20px; text-align: center; border-bottom: 4px solid #FFD700;">
+            <h1 style="margin: 0; font-size: 28px; font-weight: 900; color: #0D1321; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">ПрофНавигатор</h1>
+        </div>
+        <div style="padding: 25px; background: #2A4A9F; border-left: 4px solid #FFD700;">
+            {% set parts = content.split('\n\n') %}
+            {% for part in parts %}
+                {% set lines = part.split('\n') %}
+                {% if lines[0] in ["Чем ты будешь заниматься?", "Кем ты можешь стать?", "Где ты сможешь работать?", "Почему это перспективно?", "Как поступить?"] %}
+                    <p style="margin: 15px 0 8px 0; font-size: 14px; line-height: 1.5; color: #FFD700; font-weight: 600;">{{ lines[0] }}</p>
+                {% else %}
+                    <p style="margin: 15px 0 8px 0; font-size: 14px; line-height: 1.5;">{{ lines[0] }}</p>
+                {% endif %}
+                {% for line in lines[1:] %}
+                    {% if line.startswith('-') %}
+                        <ul style="margin: 5px 0 0 20px; padding-left: 0; list-style: none;">
+                            <li style="position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 14px; line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: #FFD700; font-size: 12px;">✦</span>
+                                {{ line[2:] }}
+                            </li>
+                        </ul>
+                    {% else %}
+                        <p style="margin: 5px 0; font-size: 14px; line-height: 1.5;">{{ line }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div style="background: #0D1321; padding: 20px; text-align: center; border-top: 3px solid #FFD700; font-family: 'Georgia', serif; font-size: 12px; color: #FFFFFF; line-height: 1.6;">
+            <p style="margin: 5px 0;">Это письмо отправлено автоматически. Не отвечайте на него.</p>
+            <p style="margin: 5px 0;">Контакты для поступления:</p>
+            <p style="margin: 5px 0;">+7 (863) 237-02-60 | <a href="mailto:pk@rsue.ru" style="color: #FFD700; text-decoration: none; font-weight: 600;">pk@rsue.ru</a></p>
+            <p style="margin: 5px 0;">Ростов-на-Дону, Большая Садовая, 69, к. 305а</p>
+            <p style="margin: 5px 0;"><a href="https://rsue.ru" style="color: #FFD700; text-decoration: none; font-weight: 600;">rsue.ru</a></p>
+        </div>
+    </div>
+</body>
+</html>

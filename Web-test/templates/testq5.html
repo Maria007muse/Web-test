@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПрофНавигатор - Вопрос 5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-digital"></div>
+    <div class="test-container">
+        <div class="question-header">
+            <h2>Какой гаджет ты бы взял/а на необитаемый остров?</h2>
+        </div>
+        <form method="POST">
+            <div class="image-options">
+                <button type="submit" name="answer" value="Фундаментальная информатика и ИТ" class="option-image-text">
+                    <span class="option-label-text">Ноутбук, чтобы писать код и ругаться на баг без интернета</span>
+                </button>
+                <button type="submit" name="answer" value="Программная инженерия" class="option-image-text">
+                    <span class="option-label-text">Смартфон, чтобы играть в змейку и снимать закаты</span>
+                </button>
+                <button type="submit" name="answer" value="Бизнес-информатика" class="option-image-text">
+                    <span class="option-label-text">Планшет, чтобы рисовать бизнес-план спасения для кокосов</span>
+                </button>
+                <button type="submit" name="answer" value="Прикладная математика и информатика" class="option-image-text">
+                    <span class="option-label-text">Калькулятор, чтобы считать, сколько бананов я съем до заката</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
